@@ -1,0 +1,64 @@
+#root{
+    width: 200%;
+    min-height: 100vh;
+
+    background-color: #ccc;
+
+    
+    #menu-bt{
+        position: fixed;
+        
+        width: 60px;
+        height: 60px;
+        
+        top: 0;
+        right: 0;
+        
+        background-color: black;
+        
+        
+        &::before, // nem latja a google nem kerul bele a DOM-ba 
+        &::after{
+            content: ""; // kirenderelodik a HTML-ben, ha ez a property nem jeleneik meg akkor akkor nem jelenik meg a before, after
+            
+            position: absolute;
+            
+            right: 10px;
+            
+            width: 40px;
+            height: 4px;
+            
+            background-color: white;
+            
+            transition: top 500ms, transform 500ms ; // a "transition: all" nagyon performance, ezzel lesz smooth az 'animacio'
+        }
+        
+        &::before{
+            top: 20px;
+        } 
+        
+        &::after{
+            top: 35px;
+        }
+    
+    }
+
+    &.menu-opened{
+        background-color: #fff;
+        
+        #menu-bt{
+            background-color: #333;
+
+            &::before{
+                top: 28px;
+                transform: rotate(45deg);
+            } 
+            
+            &::after{
+                top: 28px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+            

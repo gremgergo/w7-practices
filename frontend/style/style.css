@@ -1,0 +1,56 @@
+#root {
+  width: 200%;
+  min-height: 100vh;
+  background-color: #ccc;
+}
+
+#root #menu-bt {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  right: 0;
+  background-color: black;
+}
+
+#root #menu-bt::before, #root #menu-bt::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  -webkit-transition: top 500ms, -webkit-transform 500ms;
+  transition: top 500ms, -webkit-transform 500ms;
+  transition: top 500ms, transform 500ms;
+  transition: top 500ms, transform 500ms, -webkit-transform 500ms;
+}
+
+#root #menu-bt::before {
+  top: 20px;
+}
+
+#root #menu-bt::after {
+  top: 35px;
+}
+
+#root.menu-opened {
+  background-color: #fff;
+}
+
+#root.menu-opened #menu-bt {
+  background-color: #333;
+}
+
+#root.menu-opened #menu-bt::before {
+  top: 28px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#root.menu-opened #menu-bt::after {
+  top: 28px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+/*# sourceMappingURL=style.css.map */
