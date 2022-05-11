@@ -50,7 +50,6 @@ const loadEvent = function () {
 
     menuButtonElement.addEventListener("click", menuButtonClickEvent);
 
-
     let beerSections = ""
 
     for (const beer of beers.cards) { // iterator barmi lehet 

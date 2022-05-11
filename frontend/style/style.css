@@ -55,28 +55,30 @@
           transform: rotate(-45deg);
 }
 
-#root section {
+#root.menu-opened nav {
+  right: 0px;
+}
+
+section {
   width: 100%;
   height: 100vh;
 }
 
-#root nav {
+nav {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -300px;
   width: 300px;
   height: 100vh;
   padding: 20px;
   background-color: #000;
   color: #fff;
   z-index: 99;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-#root nav.navBar-opnened nav::before {
-  right: -300px;
-}
-
-#root nav a {
+nav a {
   display: block;
   margin-bottom: 20px;
 }
